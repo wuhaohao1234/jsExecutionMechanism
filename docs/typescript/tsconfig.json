@@ -1,0 +1,26 @@
+
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "commonjs", // 指定使用模块: 'commonjs', 'amd', 'system', 'umd' or 'es2015'
+    "outDir": "./dist",
+    "inlineSourceMap": true, // 生成单个 soucemaps 文件，而不是将 sourcemaps 生成不同的文件
+    "target": "es5",
+    "removeComments": true, //删除编译后的所有的注释
+    "declaration": true, //生成相应的 '.d.ts' 文件
+    "moduleResolution": "node", //选择模块解析策略： 'node' (Node.js) or 'classic' (TypeScript pre-1.6)
+    "noImplicitAny": true, // 在表达式和声明上有隐含的 any类型时报错
+    "experimentalDecorators": true, // 启用装饰器
+    "noUnusedLocals": true, // 有未使用的变量时，抛出错误
+    "alwaysStrict": true, // 以严格模式检查每个模块，并在每个文件里加入 'use strict'
+
+  },
+  "exclude": [
+    "dist",
+    "node_modules",
+    "**/*.spec.ts"
+  ],
+  "include": [
+    "src/**/*"
+  ]
+}

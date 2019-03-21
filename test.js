@@ -1,19 +1,19 @@
-console.log('script start');
+class Functor {
+    constructor(value) {
+        this.value = value
+    }
+    map(fn) {
+        return this.value ? new Functor(fn(this.value)) : null
+    }
+}
 
-setTimeout(function() {
-    console.log('setTimeout');
-    Promise.resolve(1).then((a) => {
-        console.log(a+'setTimeout里面的promise')
-    })
-}, 0);
+Functor.of = value => new Functor(value)
 
-new Promise((resolve,reject) => {
-    console.log('promise执行')
-    resolve(1)
-}).then((resolve) => {
-    console.log(resolve + '第一次.then')
-}).then(() => {
-    console.log('第二次.then')
-})
+let funObj = Functor.of('字符串')
+console.log(funObj);
 
-console.log('script end');
+let head = str => str[0]
+
+let newFun = funObj.map(head)
+console.log(newFun);
+
